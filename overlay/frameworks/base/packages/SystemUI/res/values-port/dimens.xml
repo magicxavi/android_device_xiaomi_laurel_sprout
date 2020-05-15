@@ -1,0 +1,4 @@
+<resources>
+    <!-- The margin at the bottom of the keyguard security container-->
+    <dimen name="kg_security_container_min_bottom_margin">100dp</dimen>
+</resources>
