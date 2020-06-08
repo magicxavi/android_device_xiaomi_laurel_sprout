@@ -3024,10 +3024,6 @@ vendor/lib64/vendor.qti.gnss@2.1.so|977a7010f325846c8ec2102f90409a9ddb5cf8a9
 vendor/lib64/vendor.qti.gnss@3.0-service.so|9e17e2b620cb9fea6a60847393d75d46abf9c15b
 vendor/lib64/vendor.qti.gnss@3.0.so|cc558799af8132fcdb4ce1b41ac7ab25e86c68fa
 
-# Gralloc - source built with raw10 fix
-vendor/lib/libgrallocutils.so|42b16c8bee0ad715c2509b526f4cb67c325cec31
-vendor/lib64/libgrallocutils.so|175cce1c7b7cb20c745f39b84201936d5629937b
-
 # Firmware
 vendor/firmware/a225_pfp.fw
 vendor/firmware/a225_pm4.fw
