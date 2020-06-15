@@ -32,6 +32,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.fluence.voicerec=false \
     persist.vendor.audio.ras.enabled=false \
     ro.af.client_heap_size_kbyte=7168 \
+    ro.config.media_vol_steps=25 \
+    ro.config.vc_call_vol_steps=7 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
     ro.vendor.audio.sos=true \
@@ -109,6 +111,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.xiaomi.cameratools,com.factory.mmigroup \
+    persist.vendor.camera.expose.aux=1
+
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1 \
@@ -126,8 +133,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=0 \
     debug.mdpcomp.logs=0 \
-    persist.hwc.enable_vds=1 \
+    debug.sf.latch_unsignaled=1 \
     persist.demo.hdmirotationlock=false \
+    persist.hwc.enable_vds=1 \
     ro.opengles.version=196610 \
     ro.vendor.display.sensortype=2 \
     vendor.display.comp_mask=0 \
@@ -142,7 +150,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_force_split=0 \
     vendor.display.enable_null_display=0 \
     vendor.display.enable_optimize_refresh=1 \
-    vendor.gralloc.disable_ubwc=0
+    vendor.gralloc.disable_ubwc=0 
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -152,22 +160,42 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# LMKD
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.low_ram=false \
+    ro.lmk.kill_heaviest_task=true \
+    ro.lmk.kill_timeout_ms=100 \
+    ro.lmk.log_stats=true \
+    ro.lmk.use_minfree_levels=true
+
 # Keystore
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore_desede=true
 
-# NFC
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.se.type=HCE,UICC
-
 # Netmgr
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.df.dev_name=rmnet_usb0 \
     persist.vendor.data.iwlan.enable=true \
     persist.vendor.data.mode=concurrent
+
+# Netflix
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.netflix.bsp_rev=Q6125-17995-1
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.bservice_enable=true
+
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.aac_51_output_enabled=true \
+    media.stagefright.enable-aac=true \
+    media.stagefright.enable-fma2dp=true \
+    media.stagefright.enable-http=true \
+    media.stagefright.enable-player=true \
+    media.stagefright.enable-qcp=true \
+    media.stagefright.enable-scan=true \
+    persist.mm.enable.prefetch=true
 
 # PASR
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -200,6 +228,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=22,22 \
     telephony.lteOnCdmaDevice=1
 
+# VoLTE/VoWifi
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.ims_volte_enable=1 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.radio.calls.on.ims=1
+
 # SurfaceFlinger
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
@@ -217,3 +253,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_phase_offset_ns=500000 \
     debug.sf.enable_hwc_vds=0
+
+# WFD
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
