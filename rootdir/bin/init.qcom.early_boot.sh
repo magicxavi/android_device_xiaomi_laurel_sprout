@@ -78,7 +78,7 @@ function set_density_by_fb() {
         elif [ $fb_width -ge 1440 ]; then
            setprop vendor.display.lcd_density 560
         elif [ $fb_width -ge 1080 ]; then
-           setprop vendor.display.lcd_density 420
+           setprop vendor.display.lcd_density 480
         elif [ $fb_width -ge 720 ]; then
            setprop vendor.display.lcd_density 320 #for 720X1280 resolution
         elif [ $fb_width -ge 480 ]; then
@@ -398,23 +398,6 @@ case "$product" in
         *)
         ;;
 esac
-case "$product" in
-        "sdmshrike_au")
-         setprop vendor.display.lcd_density 160
-         echo 940800000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
-         echo 940800000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq
-         ;;
-        *)
-        ;;
-esac
-
-case "$product" in
-        "msmnile_gvmq")
-         setprop vendor.display.lcd_density 160
-         ;;
-        *)
-        ;;
-esac
 # Setup display nodes & permissions
 # HDMI can be fb1 or fb2
 # Loop through the sysfs nodes and determine
@@ -446,9 +429,6 @@ then
 else
     set_perms /sys/devices/virtual/hdcp/msm_hdcp/min_level_change system.graphics 0660
 fi
-
-# fix the persist sensors context
-chcon -R u:object_r:persist_sensors_file:s0 /mnt/vendor/persist/sensors
 
 # allow system_graphics group to access pmic secure_mode node
 set_perms /sys/class/lcd_bias/secure_mode system.graphics 0660
