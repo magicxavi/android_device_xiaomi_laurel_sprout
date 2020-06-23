@@ -359,9 +359,6 @@ PRODUCT_PACKAGES += \
     libjson \
     libqti_vndfwk_detect.vendor
 
-# Vendor SPL
-VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
-
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
