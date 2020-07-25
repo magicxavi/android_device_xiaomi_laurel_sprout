@@ -5,4 +5,8 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_laurel_sprout.mk
+    $(LOCAL_DIR)/bliss_laurel_sprout.mk
+    
+COMMON_LUNCH_CHOICES := \
+    bliss_laurel_sprout-userdebug \
+    bliss_laurel_sprout-eng

@@ -13,10 +13,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/xiaomi/laurel_sprout/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_laurel_sprout
+PRODUCT_NAME := bliss_laurel_sprout
 PRODUCT_DEVICE := laurel_sprout
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi A3
@@ -29,3 +29,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="laurel_sprout"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+export BLISS_BUILDTYPE=OFFICIAL
+Export BLISS_MAINTAINER=Magicxavi
