@@ -32,3 +32,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 export BLISS_BUILDTYPE=OFFICIAL
 Export BLISS_MAINTAINER=Magicxavi
+
+PRODUCT_PACKAGES += \
+    RemovePackages
