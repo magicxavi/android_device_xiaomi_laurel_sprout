@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <resources>
+     <!-- Bottom margin size when fingerprint in display is active -->
+     <dimen name="keyguard_indication_margin_bottom_fingerprint_in_display">128dp</dimen>
+     <dimen name="keyguard_indication_margin_bottom">124dp</dimen>
+     <!-- Bottom margin for fod animation -->
+     <dimen name="fod_animation_offset_x">62dp</dimen>
+     <dimen name="fod_animation_offset_y">62dp</dimen>
+ </resources>
+
