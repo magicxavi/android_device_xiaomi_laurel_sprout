@@ -12,6 +12,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from laurel_sprout device
 $(call inherit-product, device/xiaomi/laurel_sprout/device.mk)
 
+# Inherit from laurel_sprout device
+$(call inherit-product, vendor/MiuiCamera/config.mk)
+
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/bliss/config/common_full_phone.mk)
 
