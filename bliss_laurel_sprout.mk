@@ -37,4 +37,5 @@ export BLISS_BUILDTYPE=OFFICIAL
 Export BLISS_MAINTAINER=Magicxavi
 
 PRODUCT_PACKAGES += \
-    RemovePackages
+    RemovePackages \
+    FirefoxLite
