@@ -172,6 +172,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.lmk.log_stats=true \
     ro.lmk.use_minfree_levels=true
 
+# Fwk detect
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.va_aosp.support=1
+
 # Keystore
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore_desede=true
