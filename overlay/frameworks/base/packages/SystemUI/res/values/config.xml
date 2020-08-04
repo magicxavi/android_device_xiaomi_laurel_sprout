@@ -38,4 +38,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <!-- FPSInfoService FPS node file path -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/class/drm/sde-crtc-0/measured_fps</string>
+
+    <!-- Whether to disable assist hint on lockscreen -->
+    <bool name="config_disableAssistHintOnLockscreen">true</bool>
 </resources>
