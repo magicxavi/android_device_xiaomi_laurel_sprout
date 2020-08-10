@@ -25,6 +25,10 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi A3
 PRODUCT_MANUFACTURER := Xiaomi
 
+# Inherit GApps
+$(call inherit-product-if-exists, vendor/gapps/config.mk)
+TARGET_GAPPS_ARCH := arm64
+
 BUILD_FINGERPRINT := "Xiaomi/laurel_sprout/laurel_sprout:10/QKQ1.190910.002/V11.0.15.0.QFQMIXM:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
