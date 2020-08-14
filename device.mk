@@ -207,7 +207,7 @@ PRODUCT_PACKAGES += \
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
-    XiaomiParts \
+#    XiaomiParts \
     CustomDoze
 
 # Display/Graphics
