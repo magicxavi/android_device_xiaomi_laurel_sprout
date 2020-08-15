@@ -89,17 +89,15 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
     return Void();
 }
 
-Return<void> FingerprintInscreen::onPress(int32_t ambientLight) {
+Return<void> FingerprintInscreen::onPress() {
     xiaomiDisplayFeatureService->setFeature(0, 11, 1, 4);
-    if (ambientLight > 12) {
+    if (ambient > 12) {
         xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_630_FOD);
         xiaomiDisplayFeatureService->setFeature(0, 11, 1, 3);
     } else if (get(BRIGHTNESS_PATH, 0) != 0) {
         xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_300_FOD);
         xiaomiDisplayFeatureService->setFeature(0, 11, 1, 5);
     }
-
-    ambient = ambientLight;
     return Void();
 }
 
