@@ -27,7 +27,7 @@
 #define PARAM_NIT_300_FOD 4
 #define PARAM_NIT_NONE 0
 
-#define FOD_STATUS_PATH "/sys/devices/virtual/touch/tp_dev/fod_status"
+#define FOD_STATUS_PATH "/sys/class/touch/tp_dev/fod_status"
 #define FOD_STATUS_ON 1
 #define FOD_STATUS_OFF 0
 
