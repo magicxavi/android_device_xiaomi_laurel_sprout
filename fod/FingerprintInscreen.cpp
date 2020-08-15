@@ -35,7 +35,7 @@
 #define FOD_SENSOR_Y 1356
 #define FOD_SENSOR_SIZE 134
 
-#define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness_clone"
+#define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness"
 
 namespace {
 template <typename T>
