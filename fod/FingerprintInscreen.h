@@ -57,7 +57,6 @@ public:
 private:
     sp<IDisplayFeature> xiaomiDisplayFeatureService;
     sp<IXiaomiFingerprint> xiaomiFingerprintService;
-    int32_t ambient;
 };
 
 }  // namespace implementation
