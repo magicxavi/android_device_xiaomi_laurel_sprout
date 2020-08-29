@@ -24,7 +24,7 @@
 #include <hardware_legacy/power.h>
 
 #define COMMAND_NIT 10
-#define PARAM_NIT_630_FOD 3
+#define PARAM_NIT_FOD 3
 #define PARAM_NIT_NONE 0
 
 #define FOD_STATUS_PATH "/sys/class/touch/tp_dev/fod_status"
@@ -87,32 +87,33 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 
 Return<void> FingerprintInscreen::onPress() {
     acquire_wake_lock(PARTIAL_WAKE_LOCK, LOG_TAG);
-    if (get(BRIGHTNESS_PATH, 0) < 340) {
-        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_630_FOD);
+    if (get(BRIGHTNESS_PATH, 0) < 350) {
+        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_FOD);
         xiaomiDisplayFeatureService->setFeature(0, 11, 1, 3);
-    } else (get(BRIGHTNESS_PATH, 0) > 340) {
-        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_630_FOD);
+    } else if (get(BRIGHTNESS_PATH, 0) > 350) {
+        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_FOD);
     }
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
-    xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
-    xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
+    if (get(BRIGHTNESS_PATH, 0) < 350) {
+        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+        xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
+    } else if (get(BRIGHTNESS_PATH, 0) > 350) {
+        xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+    }
     release_wake_lock(LOG_TAG);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
     set(FOD_STATUS_PATH, FOD_STATUS_ON);
-    xiaomiDisplayFeatureService->setFeature(0, 17, 1, 1);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
     set(FOD_STATUS_PATH, FOD_STATUS_OFF);
-    xiaomiDisplayFeatureService->setFeature(0, 17, 0, 1);
-    xiaomiDisplayFeatureService->setFeature(0, 11, 0, 3);
     xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
     return Void();
 }
@@ -133,15 +134,13 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
 
 Return<int32_t> FingerprintInscreen::getDimAmount(int32_t brightness) {
     float alpha;
-    int realBrightness = get(BRIGHTNESS_PATH, 0);
 
-    if (realBrightness > 400) {
-        alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.455);
+    if (brightness > 62) {
+        alpha = 1.0 - pow(brightness / 255.0 * 430.0 / 600.0, 0.45);
     } else {
-        alpha = 1.0 - pow(realBrightness / 1680.0, 0.455);
+        alpha = 1.0 - pow(brightness / 200.0, 0.45);
     }
-
-    (void) brightness;
+    
     return 255 * alpha;
 }
 
