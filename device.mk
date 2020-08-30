@@ -282,8 +282,10 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
+    FM2 \
     libqcomfm_jni \
-    qcom.fmradio
+    qcom.fmradio \
+    qcom.fmradio.xml
 
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \
