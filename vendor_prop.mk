@@ -26,6 +26,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.deep_buffer.media=true \
     audio.offload.min.duration.secs=30 \
     audio.offload.video=true \
+    audio.offload.disable=0 \
     audio.sys.noisy.broadcast.delay=600 \
     audio.sys.offload.pstimeout.secs=3 \
     persist.audio.fluence.voicecomm=true \
