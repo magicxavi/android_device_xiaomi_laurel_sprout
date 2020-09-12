@@ -103,6 +103,32 @@ vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
+vendor/etc/acdbdata/IDP/trinket-tasha-snd-card/IDP_WCD9335_Bluetooth_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tasha-snd-card/IDP_WCD9335_General_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tasha-snd-card/IDP_WCD9335_Global_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tasha-snd-card/IDP_WCD9335_Handset_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tasha-snd-card/IDP_WCD9335_Hdmi_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tasha-snd-card/IDP_WCD9335_Headset_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tasha-snd-card/IDP_WCD9335_Speaker_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tasha-snd-card/IDP_WCD9335_workspaceFile.qwsp
+vendor/etc/acdbdata/IDP/trinket-tavil-snd-card/IDP_WCD9340_Bluetooth_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tavil-snd-card/IDP_WCD9340_Codec_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tavil-snd-card/IDP_WCD9340_General_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tavil-snd-card/IDP_WCD9340_Global_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tavil-snd-card/IDP_WCD9340_Handset_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tavil-snd-card/IDP_WCD9340_Hdmi_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tavil-snd-card/IDP_WCD9340_Headset_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tavil-snd-card/IDP_WCD9340_Speaker_cal.acdb
+vendor/etc/acdbdata/IDP/trinket-tavil-snd-card/IDP_WCD9340_workspaceFile.qwsp
+vendor/etc/acdbdata/QRD_India/QRD_India_Bluetooth_cal.acdb
+vendor/etc/acdbdata/QRD_India/QRD_India_Codec_cal.acdb
+vendor/etc/acdbdata/QRD_India/QRD_India_General_cal.acdb
+vendor/etc/acdbdata/QRD_India/QRD_India_Global_cal.acdb
+vendor/etc/acdbdata/QRD_India/QRD_India_Handset_cal.acdb
+vendor/etc/acdbdata/QRD_India/QRD_India_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD_India/QRD_India_Headset_cal.acdb
+vendor/etc/acdbdata/QRD_India/QRD_India_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD_India/QRD_India_workspaceFile.qwsp
 
 # Audio HAL
 vendor/lib/hw/audio.primary.trinket.so
@@ -3095,19 +3121,28 @@ vendor/lib/libsdmcore.so
 vendor/lib64/libsdmcore.so
 
 # Graphics (SDM)
-vendor/lib64/libdisp-aba.so
-vendor/lib64/libdisplayqos.so
-vendor/lib64/libdpps.so
-vendor/lib64/libhdr_tm.so
 vendor/lib64/libqseed3.so
-vendor/lib64/libsdedrm.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-colormgr-algo.so
 vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
-vendor/lib64/libtinyxml.so
 vendor/lib64/libtinyxml2_1.so
+vendor/lib/libqseed3.so
+vendor/lib/libsdm-color.so
+vendor/lib/libsdm-colormgr-algo.so
+vendor/lib/libsdm-diag.so
+vendor/lib/libsdm-disp-vndapis.so
+vendor/lib/libsdmextension.so
+vendor/lib/libtinyxml2_1.so
+
+# Graphics (DRM)
+vendor/lib64/libsdedrm.so
+vendor/lib/libsdedrm.so
+
+# Graphics (HDR)
+vendor/lib64/libhdr_tm.so
+vendor/lib/libhdr_tm.so
 
 # Graphics (Vulkan)
 vendor/lib/hw/vulkan.trinket.so
@@ -3183,14 +3218,38 @@ vendor/lib64/libgcs.so
 vendor/lib64/liblistensoundmodel2.so
 
 # Media
--vendor/lib/libMpeg4SwEncoder.so
+vendor/lib64/libAlacSwDec.so
+vendor/lib64/libApeSwDec.so
+vendor/lib64/libFlacSwDec.so
+vendor/lib64/libI420colorconvert.so
+vendor/lib64/libmm-color-convertor.so
+vendor/lib64/libmmosal_proprietary.so
 -vendor/lib64/libMpeg4SwEncoder.so
-product/lib/vendor.qti.hardware.vpp@1.1.so
-product/lib64/vendor.qti.hardware.vpp@1.1.so
+vendor/lib64/libOmxAacDec.so
+vendor/lib64/libOmxAlacDec.so
+vendor/lib64/libOmxAlacDecSw.so
+vendor/lib64/libOmxAmrDec.so
+vendor/lib64/libOmxAmrwbplusDec.so
+vendor/lib64/libOmxApeDec.so
+vendor/lib64/libOmxApeDecSw.so
+vendor/lib64/libOmxEvrcDec.so
+vendor/lib64/libOmxG711Dec.so
+vendor/lib64/libOmxQcelp13Dec.so
+vendor/lib64/libOmxSwVdec.so
+vendor/lib64/libOmxSwVencMpeg4.so
+vendor/lib64/libOmxWmaDec.so
+vendor/lib64/libstagefright_soft_qtiflacdec.so
+vendor/lib64/vendor.qti.hardware.vpp@1.1.so
+vendor/lib64/vendor.qti.hardware.vpp@1.2.so
+vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 vendor/lib/libAlacSwDec.so
 vendor/lib/libApeSwDec.so
+vendor/lib/libdsd2pcm.so
 vendor/lib/libFlacSwDec.so
 vendor/lib/libI420colorconvert.so
+vendor/lib/libmm-color-convertor.so
+vendor/lib/libmmosal_proprietary.so
+-vendor/lib/libMpeg4SwEncoder.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
 vendor/lib/libOmxAlacDecSw.so
@@ -3206,35 +3265,10 @@ vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxSwVdec.so
 vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/libOmxWmaDec.so
-vendor/lib/libOmxVideoDSMode.so
-vendor/lib/libdsd2pcm.so
-vendor/lib/libmm-color-convertor.so
-vendor/lib/libmmosal_proprietary.so
+vendor/lib/libstagefright_soft_qtiflacdec.so
 vendor/lib/vendor.qti.hardware.vpp@1.1.so
 vendor/lib/vendor.qti.hardware.vpp@1.2.so
 vendor/lib/vendor.qti.hardware.vpp@1.3.so
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
-vendor/lib64/libFlacSwDec.so
-vendor/lib64/libI420colorconvert.so
-vendor/lib64/libOmxAacDec.so
-vendor/lib64/libOmxAlacDec.so
-vendor/lib64/libOmxAlacDecSw.so
-vendor/lib64/libOmxAmrDec.so
-vendor/lib64/libOmxAmrwbplusDec.so
-vendor/lib64/libOmxApeDec.so
-vendor/lib64/libOmxApeDecSw.so
-vendor/lib64/libOmxEvrcDec.so
-vendor/lib64/libOmxG711Dec.so
-vendor/lib64/libOmxQcelp13Dec.so
-vendor/lib64/libOmxSwVdec.so
-vendor/lib64/libOmxSwVencMpeg4.so
-vendor/lib64/libOmxWmaDec.so
-vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libmmosal_proprietary.so
-vendor/lib64/vendor.qti.hardware.vpp@1.1.so
-vendor/lib64/vendor.qti.hardware.vpp@1.2.so
-vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 
 # Neural-networks
 vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti
