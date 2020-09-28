@@ -1,0 +1,5 @@
+type tmp_root_mount_file, file_type;
+type sysfs_tp_dispparam, sysfs_type, fs_type;
+type sysfs_tp_aodstatus, sysfs_type, fs_type;
+type sysfs_tp_fodstatus, sysfs_type, fs_type;
+type sysfs_graphics, sysfs_type, fs_type;
