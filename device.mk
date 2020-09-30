@@ -525,3 +525,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+    
+# DumpState
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate@1.1-service-laurel_sprout
