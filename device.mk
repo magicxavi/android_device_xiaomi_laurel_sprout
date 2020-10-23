@@ -189,6 +189,9 @@ PRODUCT_PACKAGES += \
     libldacBT_dec \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
+
 # Boot SPL
 BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
