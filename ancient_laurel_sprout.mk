@@ -40,7 +40,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_PACKAGES += \
     RemovePackages \
-    FirefoxLite
+    FirefoxLite \
+    GCamGo
     
 # Official-ify
 ANCIENT_OFFICIAL := true
