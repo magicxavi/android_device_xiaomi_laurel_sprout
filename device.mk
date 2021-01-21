@@ -212,6 +212,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
+    
+# Transport
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor
 
 # Camera
 PRODUCT_PACKAGES += \
