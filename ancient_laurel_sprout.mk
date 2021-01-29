@@ -30,7 +30,7 @@ TARGET_GAPPS_ARCH := arm64
 BUILD_FINGERPRINT := google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="laurel_sprout-user 10 QKQ1.190910.002 V11.0.15.0.QFQMIXM release-keys" \
+    PRIVATE_BUILD_DESC="laurel_sprout-user 10 QKQ1.190910.002 V11.0.23.0.QFQMIXM release-keys" \
     PRODUCT_NAME="laurel_sprout"
 
 PRODUCT_PROPERTY_OVERRIDES += \

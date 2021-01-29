@@ -186,6 +186,9 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 # RenderScript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2020-11-05
+
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
