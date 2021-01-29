@@ -481,7 +481,8 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libdpmframework_shim
+    libdpmframework_shim \
+    libshim_wfdservice
 
 # TextClassifier
 PRODUCT_PACKAGES += \
