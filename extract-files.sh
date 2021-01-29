@@ -58,22 +58,6 @@ function blob_fixup() {
     product/lib64/libdpmframework.so)
         patchelf --add-needed libdpmframework_shim.so "${2}"
         ;;
-
-    lib64/libwfdnative.so)
-        patchelf --add-needed libshim_wfdservice.so "${2}"
-        ;;
-    
-    lib/libwfdnative.so)
-        patchelf --add-needed libshim_wfdservice.so "${2}"
-        ;;
-
-    lib/libwfdcommonutils.so)
-        patchelf --add-needed libshim_wfdservice.so "${2}"
-        ;;
-    
-    lib/libwfdmmsrc_system.so)
-        patchelf --add-needed libshim_wfdservice.so "${2}"
-        ;;
     esac
 }
 

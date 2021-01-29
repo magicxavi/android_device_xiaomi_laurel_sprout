@@ -500,8 +500,7 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libdpmframework_shim \
-    libshim_wfdservice
+    libdpmframework_shim
 
 # TextClassifier
 PRODUCT_PACKAGES += \
