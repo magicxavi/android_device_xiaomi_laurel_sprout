@@ -414,7 +414,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc \
     fstab.qcom \
-    init.safailnet.rc
+    init.safailnet.rc \
+    init.qcom.alarm.sh
 
 # RCS
 PRODUCT_PACKAGES += \

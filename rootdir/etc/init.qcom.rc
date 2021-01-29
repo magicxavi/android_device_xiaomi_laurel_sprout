@@ -76,6 +76,8 @@ on post-fs
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
+    exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qcom.alarm.sh
+    
     # Allow subsystem (modem etc) debugging
     write /sys/kernel/debug/bootkpi/kpi_values "M - Start adsp"
     write /sys/kernel/boot_adsp/boot 1
@@ -974,6 +976,7 @@ service esepmdaemon /system/vendor/bin/esepmdaemon
 
 on charger
     setprop persist.sys.usb.config mass_storage
+    start vendor.power_off_alarm
     start qcom-post-boot
 
 #add poweroffhandler
