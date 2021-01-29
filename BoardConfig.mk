@@ -40,7 +40,7 @@ TARGET_BOOTLOADER_BOARD_NAME := trinket
 TARGET_NO_BOOTLOADER := true
 
 # Display density
-TARGET_SCREEN_DENSITY := 320
+TARGET_SCREEN_DENSITY := 288
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
@@ -56,6 +56,8 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/laurel_sprout
 TARGET_KERNEL_CONFIG := vendor/laurel_sprout-perf_defconfig
+KBUILD_BUILD_USER=Magicxavi
+KBUILD_BUILD_HOST=MotherRussia
 
 # Enable stats logging in LMKD
 TARGET_LMKD_STATS_LOG := true
