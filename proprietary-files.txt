@@ -1,4 +1,4 @@
-# Proprietary files - from laurel_sprout-user 10 QKQ1.190910.002 V11.0.21.0.QFQMIXM release-keys, unless pinned
+# Proprietary files - from laurel_sprout-user 10 QKQ1.190910.002 V11.0.23.0.QFQMIXM release-keys, unless pinned
 
 # ADSP
 vendor/bin/adsprpcd
@@ -3008,37 +3008,37 @@ vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # GPS - from ginkgo MIUI 20.6.30
-product/lib64/vendor.qti.gnss@1.0.so
-product/lib64/vendor.qti.gnss@1.1.so
-product/lib64/vendor.qti.gnss@2.1.so
-product/lib64/vendor.qti.gnss@2.0.so
-product/lib64/vendor.qti.gnss@1.2.so
-product/lib64/vendor.qti.gnss@3.0.so
+product/lib64/vendor.qti.gnss@1.0.so|bf11e2b7a104ed1689623f5a772269d24e00bd14
+product/lib64/vendor.qti.gnss@1.1.so|4b88888fcba1bc3f709889cbf086d9ba2b997b91
+product/lib64/vendor.qti.gnss@2.1.so|7f69b6098f779f6ed396bbf366b496b0b228c743
+product/lib64/vendor.qti.gnss@2.0.so|f6f94bf22b8948c163b84cf092d86fdd25b39850
+product/lib64/vendor.qti.gnss@1.2.so|8073a3bfcfdc7aaf903852349bbbcd9e5d229d3e
+product/lib64/vendor.qti.gnss@3.0.so|c5ed668d324e7c898ca026fc12dad8829cd8a944
 vendor/bin/garden_app|43ff33f949436cdefd81b39ff35e00996370411e
 vendor/bin/loc_launcher|c950d040b8f267e8a8ffd9f510b5d4188a5378fc
 vendor/bin/lowi-server|505d85498ec9fc3780c95912ae0858f4c4b8c8ec
-vendor/bin/mlid
+vendor/bin/mlid|403f49bd36e878316f7b38e9ca3c699bea7f1d8b
 vendor/bin/slim_daemon|52cadd833dd7338a373dc425f833ca8c67c7e6c3
 vendor/bin/xtra-daemon|2f60773135cc6501991d64d5de48d9ce386fa7b6
 vendor/bin/xtwifi-client|cb440f963661605aa0945bda6596b51f62caaa72
 vendor/bin/xtwifi-inet-agent|b28701a1c934d13e0648abcfc0e332abb43c0780
-vendor/etc/cacert_location.pem
-vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml
-vendor/etc/xtra_root_cert.pem
+vendor/etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
+vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml|9b2f6691d6c224bcb9ab9a0d57adfb9e52f1b53e
+vendor/etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
 vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so|df7a0a1eb8a7eb930a439e86e3ac1d008ae1dbb2
-vendor/lib64/libaoa.so
-vendor/lib64/libcacertclient.so
+vendor/lib64/libaoa.so|b1d2d909794c8542b6732855ad6cf0f65df14632
+vendor/lib64/libcacertclient.so|f5ec9ae8aae385e550d79edf683f69afd0327077
 vendor/lib64/libdataitems.so|f4adcc5cc41516d89a52cb233a73ea7c30af511a
 vendor/lib64/libgarden.so|65c27d21726d527a8be5b93e7e2274ff637e7f5d
 vendor/lib64/libgarden_haltests_e2e.so|169c219b5e470b4e932e563edbd63adf8af1d3a9
 vendor/lib64/libgdtap.so|a431a99e07c7705888ea99f499b6c11aaa5b901a
 vendor/lib64/libgnsspps.so|53d0201480308fd878748ce2d40fd8e814e41fe6
-vendor/lib64/libizat_client_api.so
-vendor/lib64/libizat_core.so
+vendor/lib64/libizat_client_api.so|59bba1978f2dc6abbc6d45ac21537225a9c98ca4
+vendor/lib64/libizat_core.so|c9b17d46f7eefe7cd63a51eee72b97aa405fd300
 vendor/lib64/liblbs_core.so|5b4d614f6119900bad818686879f8120508700aa
 vendor/lib64/libloc_api_v02.so|66341c9e1ff2b2bb5f0efa5ad39f2af31604e9b7
 vendor/lib64/libloc_socket.so|83459d5495af2ecf4f879af84f208f6a28dbc71f
-vendor/lib64/liblocationservice.so
+vendor/lib64/liblocationservice.so|566184800b8c6ead7b897ef044e648d3813d88c7
 vendor/lib64/liblocationservice_glue.so|0b5db3011daa1990e8aac0fa6f2954e051b02d68
 vendor/lib64/liblowi_client.so|65246511938467be288290d4b2e32d7c3816c6af
 vendor/lib64/liblowi_wifihal.so|0c6cb869bec40478218c2193a39f87069825132f
@@ -3052,7 +3052,7 @@ vendor/lib64/vendor.qti.gnss@2.0.so|723514c74918dc90e8616c4209fabfacd1d508b9
 vendor/lib64/vendor.qti.gnss@2.1.so|1eb8c81a95fafdc79e22639233677822a4a89941
 vendor/lib64/vendor.qti.gnss@3.0-service.so|9e17e2b620cb9fea6a60847393d75d46abf9c15b
 vendor/lib64/vendor.qti.gnss@3.0.so|2293b7de8832c9175d613d4b30f637f1cfa1149a
-vendor/lib64/vendor.qti.hardware.cacert@1.0.so
+vendor/lib64/vendor.qti.hardware.cacert@1.0.so|e3642596bd6d801c388698b02728214b8ec807aa
 
 # Firmware
 vendor/firmware/a225_pfp.fw
@@ -3477,9 +3477,6 @@ vendor/lib64/libGPQTEEC_vendor.so
 vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
-
-# Telephony (qti-telephony-common) - from DRG - QKQ1.190828.002
-product/framework/qti-telephony-common.jar|74adbf98e89531ac385ab5c4cea3c2549a0d24b0
 
 # Radio
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
