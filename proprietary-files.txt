@@ -3168,10 +3168,6 @@ vendor/lib/libhdr_tm.so
 vendor/lib/hw/vulkan.trinket.so
 vendor/lib64/hw/vulkan.trinket.so
 
-# Hardware Health
-vendor/bin/hw/android.hardware.health@2.0-service
-vendor/etc/init/android.hardware.health@2.0-service.rc
-
 # IO Prefetcher
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
 vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
