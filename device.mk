@@ -78,6 +78,12 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-ancient
 
+# Overlays
+PRODUCT_PACKAGES += \
+    XiaomiBluetooth \
+    XiaomiFrameworks \
+    XiaomiSystemUI
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay-ancient/lineage-sdk
