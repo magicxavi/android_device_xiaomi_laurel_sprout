@@ -12,3 +12,7 @@ dalvik.vm.image-dex2oat-threads=8
 # Crypto
 ro.crypto.allow_encrypt_override=true
 ro.crypto.volume.filenames_mode=aes-256-cts
+
+# Camera
+vendor.camera.not.cts.apk=1
+vendor.camera.not.ctsverify.apk=1
