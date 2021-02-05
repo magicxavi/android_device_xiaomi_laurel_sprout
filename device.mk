@@ -59,8 +59,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     XiaomiBluetooth \
     XiaomiFrameworks \
-    XiaomiSystemUI \
-    NoCutoutOverlay
+    XiaomiSystemUI
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
