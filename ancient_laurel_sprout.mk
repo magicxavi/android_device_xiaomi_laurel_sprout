@@ -27,7 +27,7 @@ PRODUCT_MANUFACTURER := Xiaomi
 $(call inherit-product-if-exists, vendor/gapps/config.mk)
 TARGET_GAPPS_ARCH := arm64
 
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ1A.210105.003/7005429:user/release-keys
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="laurel_sprout-user 10 QKQ1.190910.002 V11.0.23.0.QFQMIXM release-keys" \
