@@ -127,7 +127,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_force_split=0 \
     vendor.display.enable_null_display=0 \
     vendor.display.enable_optimize_refresh=1 \
-    vendor.gralloc.disable_ubwc=0
+    debug.gralloc.enable_fb_ubwc=1 \
+    vendor.gralloc.enable_fb_ubwc=1
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
