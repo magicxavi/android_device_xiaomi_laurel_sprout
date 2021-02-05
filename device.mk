@@ -274,7 +274,8 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libOmxG711Enc \
     libstagefrighthw \
-    libavservices_minijail
+    libavservices_minijail \
+    libavservices_minijail_32
 
 # DRM
 PRODUCT_PACKAGES += \
