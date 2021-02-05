@@ -60,8 +60,7 @@ PRODUCT_PACKAGES += \
     XiaomiBluetooth \
     XiaomiFrameworks \
     XiaomiSystemUI \
-    NoCutoutOverlay \
-    NotchBarKiller
+    NoCutoutOverlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
