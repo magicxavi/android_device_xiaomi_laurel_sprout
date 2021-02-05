@@ -254,12 +254,15 @@ PRODUCT_PACKAGES += \
     gralloc.trinket \
     hwcomposer.trinket \
     libdisplayconfig \
+    libdisplayconfig.vendor \
     libdisplayconfig.qti \
     libtinyxml \
     libvulkan \
     memtrack.trinket \
     vendor.qti.hardware.display.allocator-service \
-    vendor.display.config@2.0
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
+    vendor.qti.hardware.display.mapper@2.0.vendor
 
 # Media
 PRODUCT_PACKAGES += \
@@ -275,7 +278,8 @@ PRODUCT_PACKAGES += \
     libOmxG711Enc \
     libstagefrighthw \
     libavservices_minijail \
-    libavservices_minijail_32
+    libavservices_minijail_32 \
+    libavservices_minijail_vendor
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -541,11 +545,12 @@ PRODUCT_COPY_FILES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    libdisplayconfig.vendor \
     libnl \
     libqdMetaData \
     libqdMetaData.system \
-    libqdMetaData.vendor
+    libqdMetaData.vendor \
+    libwfdaac \
+    libwfdaac_vendor
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
