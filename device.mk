@@ -296,7 +296,6 @@ PRODUCT_PACKAGES += \
     libOmxG711Enc \
     libstagefrighthw \
     libavservices_minijail \
-    libavservices_minijail_32 \
     libavservices_minijail_vendor
 
 # DRM
@@ -577,3 +576,7 @@ PRODUCT_BOOT_JARS += \
 # DumpState
 PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.1-service-laurel_sprout
+    
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/init/,$(TARGET_COPY_OUT_VENDOR)/etc/init)
+    
