@@ -249,22 +249,38 @@ PRODUCT_PACKAGES += \
 
 # Display/Graphics
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.3-service \
-    android.hardware.graphics.mapper@2.0-impl-qti-display \
+    android.hardware.graphics.composer@2.4-impl \
+    android.hardware.graphics.composer@2.4-service \
+    android.hardware.graphics.mapper@3.0-impl-qti-display \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     gralloc.trinket \
     hwcomposer.trinket \
+    memtrack.trinket \
     libdisplayconfig \
     libdisplayconfig.vendor \
     libdisplayconfig.qti \
     libtinyxml \
     libvulkan \
-    memtrack.trinket \
+    libqdMetaData \
+    libqdMetaData.system
+
+PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0_32 \
+    android.frameworks.displayservice@1.0 \
+    android.hardware.renderscript@1.0-impl \
     vendor.qti.hardware.display.allocator-service \
-    vendor.display.config@2.0 \
-    vendor.display.config@2.0.vendor \
-    vendor.qti.hardware.display.mapper@2.0.vendor
+    vendor.display.config@1.1
+
+# Display vendor packages
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.display.composer@1.0.vendor \
+    vendor.qti.hardware.display.composer@2.0.vendor \
+    vendor.qti.hardware.display.mapper@1.0.vendor \
+    vendor.qti.hardware.display.mapper@1.1.vendor \
+    vendor.qti.hardware.display.mapper@2.0.vendor \
+    vendor.qti.hardware.display.mapper@4.0.vendor
 
 # Media
 PRODUCT_PACKAGES += \
@@ -552,9 +568,6 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl \
-    libqdMetaData \
-    libqdMetaData.system \
-    libqdMetaData.vendor \
     libwfdaac \
     libwfdaac_vendor
 
