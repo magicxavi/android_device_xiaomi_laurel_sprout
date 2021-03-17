@@ -41,10 +41,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys
 
 PRODUCT_PACKAGES += \
-    RemovePackages \
-    FirefoxLite \
-    GCamGo \
-    GalleryGo2
+    RemovePackages
+#    FirefoxLite \
+#    GCamGo \
+#    GalleryGo2
     
 # Official-ify
 ANCIENT_OFFICIAL := true
@@ -54,7 +54,3 @@ TARGET_USES_BLUR := true
 EXTRA_FOD_ANIMATIONS := true
 ANCIENT_GAPPS=true
 TARGET_GAPPS_ARCH := arm64
-
-# Use gestures by default
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
