@@ -54,3 +54,7 @@ TARGET_USES_BLUR := true
 EXTRA_FOD_ANIMATIONS := true
 ANCIENT_GAPPS=true
 TARGET_GAPPS_ARCH := arm64
+
+# Use gestures by default
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
