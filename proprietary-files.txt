@@ -1,4 +1,4 @@
-# Proprietary files - from laurel_sprout stock package V11.0.15.0.QFQMIXM global version, unless pinned
+# Proprietary files - from laurel_sprout stock package V11.0.23.0.QFQMIXM global version, unless pinned
 
 # ADSP
 vendor/bin/adsprpcd
@@ -3391,9 +3391,6 @@ vendor/lib64/libGPQTEEC_vendor.so
 vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
-
-# Telephony (qti-telephony-common) - from DRG - QKQ1.190828.002
-product/framework/qti-telephony-common.jar|74adbf98e89531ac385ab5c4cea3c2549a0d24b0
 
 # Radio
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
