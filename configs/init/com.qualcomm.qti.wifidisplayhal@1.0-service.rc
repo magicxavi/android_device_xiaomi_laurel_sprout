@@ -1,0 +1,12 @@
+#
+# Copyright (c) 2019 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+service wifidisplayhalservice /vendor/bin/wifidisplayhalservice
+  class main
+  user system
+  group inet input audio media uhid
+  writepid /dev/cpuset/system-background/tasks
+  capabilities NET_RAW
+  task_profiles ServiceCapacityLow

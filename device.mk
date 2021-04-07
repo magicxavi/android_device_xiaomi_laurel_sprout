@@ -188,6 +188,7 @@ PRODUCT_PACKAGES += \
     memtrack.trinket \
     libdisplayconfig \
     libdisplayconfig.vendor \
+    libdisplayconfig.qti \
     libtinyxml \
     libvulkan \
     libqdMetaData \
@@ -319,7 +320,8 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libOmxG711Enc \
     libstagefrighthw \
-    libavservices_minijail
+    libavservices_minijail \
+    libavservices_minijail_vendor
 
 # Net
 PRODUCT_PACKAGES += \
@@ -553,7 +555,11 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl \
+    libwfdaac \
     libwfdaac_vendor
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+    
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/init/,$(TARGET_COPY_OUT_VENDOR)/etc/init)
