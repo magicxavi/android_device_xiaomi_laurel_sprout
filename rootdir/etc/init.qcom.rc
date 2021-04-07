@@ -66,7 +66,7 @@ on late-init
     start surfaceflinger
     start themed_bootanimation
     start bootanim
-    start vendor.hwcomposer-2-3
+    start vendor.hwcomposer-2-4
     start vendor.configstore-hal
     start vendor.qti.hardware.display.allocator
 
@@ -1035,7 +1035,7 @@ on post-fs-data
 on property:sys.boot_completed=1
         # Stop the logger service
         stop logger
-service vendor.hwcomposer-2-3 /vendor/bin/hw/android.hardware.graphics.composer@2.3-service
+service vendor.hwcomposer-2-4 /vendor/bin/hw/android.hardware.graphics.composer@2.4-service
     override
     class hal animation
     user system

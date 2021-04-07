@@ -133,7 +133,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0 \
     vendor.display.disable_decimation=1 \
     vendor.display.disable_excl_rect=0 \
-    vendor.display.disable_hw_recovery_dump=0 \
+    vendor.display.disable_hw_recovery_dump=1 \
     vendor.display.disable_inline_rotator=1 \
     vendor.display.disable_scaler=0 \
     vendor.display.disable_ui_3d_tonemap=1 \
@@ -143,6 +143,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_optimize_refresh=1 \
     debug.gralloc.enable_fb_ubwc=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
+    vendor.video.disable.ubwc=1 \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
     ro.sf.force_light_brightness=1
 
 # DRM
