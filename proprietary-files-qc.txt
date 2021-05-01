@@ -156,6 +156,10 @@ vendor/lib64/libqtigef.so
 # AptX
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
 
+# Bluetooth LDAC
+vendor/lib/libldacBT_abr.so|0b22afcc8e3b49c5af67b8957ac9e08ea158ab20
+vendor/lib/libldacBT_enc.so|7a5ced9eb3fcc5745a76ed1c94611af75abd5cd1
+
 # Audio FX modules
 system_ext/etc/permissions/audiosphere.xml
 system_ext/framework/audiosphere.jar
