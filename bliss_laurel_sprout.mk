@@ -19,8 +19,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
-# Inherit some common Ancient stuff
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+# Inherit some common Bliss stuff
+$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
 
 # Inherit from laurel_sprout device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -28,7 +28,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := laurel_sprout
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := havoc_laurel_sprout
+PRODUCT_NAME := bliss_laurel_sprout
 PRODUCT_MODEL := Mi A3
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
@@ -47,7 +47,8 @@ PRODUCT_PACKAGES += \
 #    GalleryGo2
     
 # Official-ify
-HAVOC_BUILD_TYPE := Official
+BLISS_BUILDTYPE=OFFICIAL
+BLISS_BUILD_VARIANT := gapps
 TARGET_GAPPS_ARCH := arm64
 
 # Use gestures by default
