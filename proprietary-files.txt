@@ -3057,6 +3057,10 @@ vendor/lib64/vendor.qti.gnss@2.1.so|1eb8c81a95fafdc79e22639233677822a4a89941
 vendor/lib64/vendor.qti.gnss@3.0-service.so|9e17e2b620cb9fea6a60847393d75d46abf9c15b
 vendor/lib64/vendor.qti.gnss@3.0.so|2293b7de8832c9175d613d4b30f637f1cfa1149a
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so
+vendor/lib/libxtadapter.so
+vendor/lib64/libxtadapter.so
+vendor/lib/libizat_core.so
+vendor/lib64/libizat_core.so
 
 # Firmware
 vendor/firmware/a225_pfp.fw
@@ -3321,6 +3325,10 @@ vendor/lib64/hw/vendor.xiaomi.hardware.misys@3.0-impl.so
 vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so
 vendor/lib64/vendor.xiaomi.hardware.misys@3.0.so
+vendor/lib/liblogwrap_vendor.so
+vendor/lib64/liblogwrap_vendor.so
+vendor/lib/libcheckpid.so
+vendor/lib64/libcheckpid.so
 
 # Neural-networks
 vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti
