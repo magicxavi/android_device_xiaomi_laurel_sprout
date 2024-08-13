@@ -3053,12 +3053,12 @@ vendor/lib64/vendor.qti.hardware.cacert@1.0.so|398e5510db4d739de008b7230aa6e688d
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so|19a1f7ffb8118c207aa8cb2318996605771c339a
 -vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml|6514b13f55abc0acc28e004c35ff93fb972d61a9
 
-# Graphics (Firmware)
+# Graphics (Firmware) - from stock 12.0.15.0
 vendor/firmware/a610_zap.b00|cdc0262ea8bc3fa3796be6150cd5430abeeeab8d
-vendor/firmware/a610_zap.b01|02c7d3bbaffe211562048a19fdf44652ae1b184a
+vendor/firmware/a610_zap.b01|218dba79a17a4dce5930ecb2e399546fc50b6ad2
 vendor/firmware/a610_zap.b02|a29356777d8a39fde907ee051a8a2fd1eea28c23
-vendor/firmware/a610_zap.elf|fc84f3d788380ee72ccca6d0c1e48cb3654b8669
-vendor/firmware/a610_zap.mdt|e93a4a71ff2052f0a9756ded102b6777372f57b9
+vendor/firmware/a610_zap.elf|77d34fd1fb8cf5f59f86041b1725cdf7e56ccd1e
+vendor/firmware/a610_zap.mdt|08acd9233533057237896a8477b7ec7fa6bf3ac7
 vendor/firmware/a612_rgmu.bin|cb8705d5bc417e53863ed16ab0bed2fc1489646f
 vendor/firmware/a618_gmu.bin|0c211ef8a3246d649a4ae52a926d128b61e3c264
 vendor/firmware/a630_gmu.bin|32bb4acc7767c47ddb487ed7cb998d465ee462f2
@@ -3753,14 +3753,16 @@ vendor/etc/init/init.time_daemon.rc
 vendor/lib/libtime_genoff.so
 vendor/lib64/libtime_genoff.so
 
-# Touchscreen firmware
+# Touchscreen firmware - from stock 12.0.15.0
 vendor/firmware/focaltech-ft3518-sumsung.ini|b211bef1c4111bd6bdc6ea4d44c4a604331a116d
+vendor/firmware/goodix_cfg_group.bin|073de29e8cfe2291666e36af4095dda9a0d18aff
+vendor/firmware/goodix_firmware.bin|0251301a00f1e87a28e911a74d3d95b35f47d328
 vendor/firmware/gtx8_limits.csv|f3561bfb8371b93a676871815823c489d99c46dc
 vendor/firmware/sign_xiaomi/a610_zap.b00|cdc0262ea8bc3fa3796be6150cd5430abeeeab8d
-vendor/firmware/sign_xiaomi/a610_zap.b01|02c7d3bbaffe211562048a19fdf44652ae1b184a
+vendor/firmware/sign_xiaomi/a610_zap.b01|81086729da7ecc7f9e2e49ada3fe2a6bbbab506d
 vendor/firmware/sign_xiaomi/a610_zap.b02|a29356777d8a39fde907ee051a8a2fd1eea28c23
-vendor/firmware/sign_xiaomi/a610_zap.elf|fc84f3d788380ee72ccca6d0c1e48cb3654b8669
-vendor/firmware/sign_xiaomi/a610_zap.mdt|e93a4a71ff2052f0a9756ded102b6777372f57b9
+vendor/firmware/sign_xiaomi/a610_zap.elf|7a9861a5705e256b71f4448d6cb01634a2352f49
+vendor/firmware/sign_xiaomi/a610_zap.mdt|f0306e7ab9f0c477057b9f991d673a81ccf1f363
 
 # TUI
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
