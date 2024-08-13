@@ -3062,44 +3062,17 @@ vendor/lib64/libxtadapter.so
 vendor/lib/libizat_core.so
 vendor/lib64/libizat_core.so
 
-# Firmware
-vendor/firmware/a225_pfp.fw
-vendor/firmware/a225_pm4.fw
-vendor/firmware/a225p5_pm4.fw
-vendor/firmware/a300_pfp.fw
-vendor/firmware/a300_pm4.fw
-vendor/firmware/a330_pfp.fw
-vendor/firmware/a330_pm4.fw
-vendor/firmware/a420_pfp.fw
-vendor/firmware/a420_pm4.fw
-vendor/firmware/a530_gpmu.fw2
-vendor/firmware/a530_pfp.fw
-vendor/firmware/a530_pm4.fw
-vendor/firmware/a530v1_pfp.fw
-vendor/firmware/a530v1_pm4.fw
-vendor/firmware/a530v2_seq.fw2
-vendor/firmware/a530v3_gpmu.fw2
-vendor/firmware/a530v3_seq.fw2
-vendor/firmware/a540_gpmu.fw2
-vendor/firmware/a610_zap.b00
-vendor/firmware/a610_zap.b01
-vendor/firmware/a610_zap.b02
-vendor/firmware/a610_zap.elf
-vendor/firmware/a610_zap.mdt
-vendor/firmware/a612_rgmu.bin
-vendor/firmware/a630_gmu.bin
-vendor/firmware/a630_sqe.fw
-vendor/firmware/a640_gmu.bin
-vendor/firmware/focaltech-ft3518-sumsung.ini
-vendor/firmware/gtx8_limits.csv
-vendor/firmware/leia_pfp_470.fw
-vendor/firmware/leia_pm4_470.fw
-vendor/firmware/sign_xiaomi/a610_zap.b00
-vendor/firmware/sign_xiaomi/a610_zap.b01
-vendor/firmware/sign_xiaomi/a610_zap.b02
-vendor/firmware/sign_xiaomi/a610_zap.elf
-vendor/firmware/sign_xiaomi/a610_zap.mdt
-vendor/firmware/wigig/wigig.ini
+# Graphics (Firmware)
+vendor/firmware/a610_zap.b00|cdc0262ea8bc3fa3796be6150cd5430abeeeab8d
+vendor/firmware/a610_zap.b01|02c7d3bbaffe211562048a19fdf44652ae1b184a
+vendor/firmware/a610_zap.b02|a29356777d8a39fde907ee051a8a2fd1eea28c23
+vendor/firmware/a610_zap.elf|fc84f3d788380ee72ccca6d0c1e48cb3654b8669
+vendor/firmware/a610_zap.mdt|e93a4a71ff2052f0a9756ded102b6777372f57b9
+vendor/firmware/a612_rgmu.bin|cb8705d5bc417e53863ed16ab0bed2fc1489646f
+vendor/firmware/a618_gmu.bin|0c211ef8a3246d649a4ae52a926d128b61e3c264
+vendor/firmware/a630_gmu.bin|32bb4acc7767c47ddb487ed7cb998d465ee462f2
+vendor/firmware/a630_sqe.fw|e25094f97b44244775cc38a9d909fba6bd4cf76b
+vendor/firmware/a640_gmu.bin|fb1eab0dd5f313abf31441e2209c9398da7df98b
 
 # Graphics
 vendor/lib64/egl/eglSubDriverAndroid.so
@@ -3788,6 +3761,15 @@ vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 vendor/lib/libtime_genoff.so
 vendor/lib64/libtime_genoff.so
+
+# Touchscreen firmware
+vendor/firmware/focaltech-ft3518-sumsung.ini|b211bef1c4111bd6bdc6ea4d44c4a604331a116d
+vendor/firmware/gtx8_limits.csv|f3561bfb8371b93a676871815823c489d99c46dc
+vendor/firmware/sign_xiaomi/a610_zap.b00|cdc0262ea8bc3fa3796be6150cd5430abeeeab8d
+vendor/firmware/sign_xiaomi/a610_zap.b01|02c7d3bbaffe211562048a19fdf44652ae1b184a
+vendor/firmware/sign_xiaomi/a610_zap.b02|a29356777d8a39fde907ee051a8a2fd1eea28c23
+vendor/firmware/sign_xiaomi/a610_zap.elf|fc84f3d788380ee72ccca6d0c1e48cb3654b8669
+vendor/firmware/sign_xiaomi/a610_zap.mdt|e93a4a71ff2052f0a9756ded102b6777372f57b9
 
 # TUI
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
