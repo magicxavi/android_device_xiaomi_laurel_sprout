@@ -1,0 +1,2 @@
+allow rild default_prop:file { read open getattr map };
+allow rild default_android_hwservice:hwservice_manager { add } ;

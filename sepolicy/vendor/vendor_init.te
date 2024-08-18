@@ -7,5 +7,8 @@ allow vendor_init {
 
 allow init adsprpcd_file:file mounton;
 
-set_prop(vendor_init, freq_prop)
 set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, vendor_video_prop)
+
+allow vendor_init proc_sched:file { write } ;
+allow vendor_init shell_data_file:dir { setattr } ;

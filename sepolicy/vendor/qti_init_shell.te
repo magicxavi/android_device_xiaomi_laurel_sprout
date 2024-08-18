@@ -1,0 +1,4 @@
+allow qti_init_shell qti_init_shell:capability { dac_read_search } ;
+allow qti_init_shell sysfs:file { write } ;
+allow qti_init_shell sysfs_io_sched_tuneable:file { write } ;
+allow qti_init_shell default_prop:file { read open } ;
