@@ -7,4 +7,5 @@ allow hal_power_default sysfs_kgsl:file { open write } ;
 allow hal_power_default sysfs_kgsl:lnk_file { read } ;
 allow hal_power_default debugfs:file { open write } ;
 allow hal_power_default latency_device:chr_file { open write } ;
-allow hal_power_default sysfs:file { open read } ;
+allow hal_power_default sysfs:file { open read getattr } ;
+allow hal_power_default debugfs_rpm:file { read } ;
