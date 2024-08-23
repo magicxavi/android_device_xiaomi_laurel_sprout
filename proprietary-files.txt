@@ -3160,13 +3160,13 @@ vendor/lib64/vendor.qti.hardware.iop@1.0.so
 vendor/lib64/vendor.qti.hardware.iop@2.0.so
 
 # IPA
-vendor/firmware/ipa_fws.b00
-vendor/firmware/ipa_fws.b01
-vendor/firmware/ipa_fws.b02
-vendor/firmware/ipa_fws.b03
-vendor/firmware/ipa_fws.b04
-vendor/firmware/ipa_fws.mdt
-vendor/firmware/ipa_fws.elf
+vendor/firmware/ipa_fws.b00|aade3e72dc69e9649b73fa9363985c0997437854
+vendor/firmware/ipa_fws.b01|50656d55cbb5212c66cbc788e6430d0ac8518875
+vendor/firmware/ipa_fws.b02|a4f15a2345382514ef64d40f58dbaa3f1e35c4e7
+vendor/firmware/ipa_fws.b03|c07cfef57f8f694b4cee41e78700614efbedf2bc
+vendor/firmware/ipa_fws.b04|e3552692a635dceca369cab6d9349091b669c80a
+vendor/firmware/ipa_fws.elf|b92ffdba31dfefd83e6ba63a2d0ddeb89d1e1699
+vendor/firmware/ipa_fws.mdt|040f3aae9f22f65a989ddd87493a70812ba2a388
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
