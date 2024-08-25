@@ -3,6 +3,9 @@ on boot
     chmod 0644 /sys/class/touch/tp_dev/fod_status
     chmod 0644 /sys/class/touch/tp_dev/aod_status
     chmod 0666 /dev/input/event1
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/fod_hbm
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/dimlayer_hbm
+    chmod 0666 /sys/devices/platform/soc/soc:qcom,dsi-display/dimlayer_hbm
 
 on init
     # Goodix fingerprint

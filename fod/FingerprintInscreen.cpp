@@ -19,6 +19,14 @@
 #include "FingerprintInscreen.h"
 
 #include <android-base/logging.h>
+#include <fcntl.h>
+#include <poll.h>
+#include <thread>
+#include <unistd.h>
+#include <android-base/strings.h>
+#include <cutils/properties.h>
+#include <hardware/hardware.h>
+#include <inttypes.h>
 #include <fstream>
 #include <cmath>
 
@@ -27,6 +35,14 @@
 #define COMMAND_NIT 10
 #define PARAM_NIT_FOD 3
 #define PARAM_NIT_NONE 0
+
+#define FOD_HBM_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display/fod_hbm"
+#define FOD_HBM_ON 1
+#define FOD_HBM_OFF 0
+
+#define FOD_DIM_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display/dimlayer_hbm"
+#define FOD_DIM_ON 1
+#define FOD_DIM_OFF 0
 
 #define FOD_STATUS_PATH "/sys/class/touch/tp_dev/fod_status"
 #define FOD_STATUS_ON 1
@@ -79,12 +95,22 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 }
 
 Return<void> FingerprintInscreen::onPress() {
-    xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_FOD);
+    set(FOD_STATUS_PATH, FOD_STATUS_ON);
+    set(FOD_DIM_PATH, FOD_DIM_ON);
+    std::thread([this]() {
+            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            set(FOD_HBM_PATH, FOD_HBM_ON);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_FOD);
+    }).detach();
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
+    set(FOD_STATUS_PATH, FOD_STATUS_OFF);
+    set(FOD_HBM_PATH, FOD_HBM_OFF);
     xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+    set(FOD_DIM_PATH, FOD_DIM_OFF);
     return Void();
 }
 
@@ -135,8 +161,8 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
     return Void();
 }
 
-Return<int32_t> FingerprintInscreen::getDimAmount(int32_t brightness) {
-    return false;
+Return<int32_t> FingerprintInscreen::getDimAmount(int32_t /* brightness */) {
+    return 0;
 }
 
 Return<bool> FingerprintInscreen::shouldBoostBrightness() {
