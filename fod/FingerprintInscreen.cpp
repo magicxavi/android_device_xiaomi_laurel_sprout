@@ -98,9 +98,9 @@ Return<void> FingerprintInscreen::onPress() {
     set(FOD_STATUS_PATH, FOD_STATUS_ON);
     set(FOD_DIM_PATH, FOD_DIM_ON);
     std::thread([this]() {
-            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            std::this_thread::sleep_for(std::chrono::milliseconds(40));
             set(FOD_HBM_PATH, FOD_HBM_ON);
-            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            std::this_thread::sleep_for(std::chrono::milliseconds(20));
             xiaomiFingerprintService->extCmd(COMMAND_NIT, PARAM_NIT_FOD);
     }).detach();
     return Void();
