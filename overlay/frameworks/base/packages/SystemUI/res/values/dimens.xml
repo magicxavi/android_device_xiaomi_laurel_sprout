@@ -20,7 +20,7 @@
     <dimen name="status_bar_extra_padding">4dp</dimen>
 
     <!-- FOD recognizing animation -->
-    <dimen name="fod_animation_size">280dp</dimen>
+    <dimen name="fod_animation_size">200dp</dimen>
     <dimen name="fod_animation_offset">0dp</dimen>
 
     <!-- Bottom margin size when fingerprint in display is active -->
