@@ -17,7 +17,7 @@
 <resources>
 
     <!-- the padding on the start and the end of the statusbar -->
-    <dimen name="status_bar_extra_padding">0dp</dimen>
+    <dimen name="status_bar_extra_padding">4dp</dimen>
 
     <!-- FOD recognizing animation -->
     <dimen name="fod_animation_size">280dp</dimen>
