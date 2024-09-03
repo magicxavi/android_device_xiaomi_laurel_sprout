@@ -60,6 +60,4 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
-find $BLOB_ROOT -type f | xargs sed -i "s/libhidlbase.so\00\00\00\00\00\00\00\00\00\00/libhidlbase.so\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/g"
-
 "${MY_DIR}/setup-makefiles.sh"
