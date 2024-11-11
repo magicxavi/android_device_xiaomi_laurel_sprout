@@ -211,7 +211,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     libstdc++_vendor \
-    libcamera2ndk_vendor
+    libcamera2ndk_vendor \
+    libpiex \
+    libpiex_shim \
 
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-core/android.hardware.camera.common@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.camera.common@1.0.so \
