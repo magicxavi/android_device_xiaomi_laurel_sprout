@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.doze;
+package org.customaosp.settings.doze;
 
 import android.os.Bundle;
 

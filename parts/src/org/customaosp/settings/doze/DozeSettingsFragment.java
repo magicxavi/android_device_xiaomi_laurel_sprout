@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.doze;
+package org.customaosp.settings.doze;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -37,8 +37,8 @@ import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.settingslib.widget.MainSwitchPreference;
 
-import org.lineageos.settings.R;
-import org.lineageos.settings.utils.FileUtils;
+import org.customaosp.settings.R;
+import org.customaosp.settings.utils.FileUtils;
 
 public class DozeSettingsFragment extends PreferenceFragment
         implements OnPreferenceChangeListener, OnCheckedChangeListener {

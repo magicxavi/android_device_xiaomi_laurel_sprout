@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2015 The CyanogenMod Project
+ *               2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,31 +15,37 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.doze;
+package org.customaosp.settings.doze;
 
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.SystemClock;
 import android.util.Log;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class AodSensor implements SensorEventListener {
+public class PickupSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
-    private static final String TAG = "AodSensor";
+    private static final String TAG = "PickupSensor";
+
+    private static final int MIN_PULSE_INTERVAL_MS = 2500;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
     private ExecutorService mExecutorService;
 
-    public AodSensor(Context context) {
+    private long mEntryTimestamp;
+
+    public PickupSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = DozeUtils.getSensor(mSensorManager, "xiaomi.sensor.aod");
+        mSensor = DozeUtils.getSensor(mSensorManager, "xiaomi.sensor.pickup");
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
@@ -46,14 +53,18 @@ public class AodSensor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (DEBUG) {
+        if (DEBUG)
             Log.d(TAG, "Got sensor event: " + event.values[0]);
+
+        long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
+        if (delta < MIN_PULSE_INTERVAL_MS) {
+            return;
         }
 
-        if (event.values[0] == 3 || event.values[0] == 5) {
-            DozeUtils.setDozeMode(DozeUtils.DOZE_MODE_LBM);
-        } else if (event.values[0] == 4) {
-            DozeUtils.setDozeMode(DozeUtils.DOZE_MODE_HBM);
+        mEntryTimestamp = SystemClock.elapsedRealtime();
+
+        if (event.values[0] == 1) {
+            DozeUtils.wakeOrLaunchDozePulse(mContext);
         }
     }
 
@@ -63,18 +74,17 @@ public class AodSensor implements SensorEventListener {
     }
 
     protected void enable() {
-        if (DEBUG) {
+        if (DEBUG)
             Log.d(TAG, "Enabling");
-        }
         submit(() -> {
             mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
+            mEntryTimestamp = SystemClock.elapsedRealtime();
         });
     }
 
     protected void disable() {
-        if (DEBUG) {
+        if (DEBUG)
             Log.d(TAG, "Disabling");
-        }
         submit(() -> { mSensorManager.unregisterListener(this, mSensor); });
     }
 }
