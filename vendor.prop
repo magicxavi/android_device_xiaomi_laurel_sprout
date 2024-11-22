@@ -227,3 +227,7 @@ persist.vendor.sensors.support_direct_channel=false
 
 # Time
 persist.vendor.delta_time.enable=true
+
+ro.sensor.pickup=xiaomi.sensor.pickup
+ro.sensor.pickup.lower.value=2
+ro.sensor.proximity=true
