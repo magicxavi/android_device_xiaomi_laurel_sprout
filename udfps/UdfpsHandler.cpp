@@ -105,8 +105,18 @@ class LaurelSproutUdfpsHander : public UdfpsHandler {
         // nothing
     }
     
-    void onAcquired(int32_t /*result*/, int32_t /*vendorCode*/) {
-        // nothing
+    void onAcquired(int32_t result, int32_t vendorCode) {
+        LOG(INFO) << __func__ << " result: " << result << " vendorCode: " << vendorCode;
+        if (result == FINGERPRINT_ACQUIRED_GOOD) {
+            setFingerDown(false);
+            setFodStatus(FOD_STATUS_OFF);
+        } else if (vendorCode == 21 || vendorCode == 23) {
+            /*
+             * vendorCode = 21 waiting for fingerprint authentication
+             * vendorCode = 23 waiting for fingerprint enroll
+             */
+            setFodStatus(FOD_STATUS_ON);
+        }
     }
 
     void cancel() {
