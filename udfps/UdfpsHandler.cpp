@@ -23,9 +23,9 @@
 #define PARAM_NIT_FOD 1
 #define PARAM_NIT_NONE 0
 
-#define FOD_STATUS_PATH "/sys/class/touch/tp_dev/fod_status"
-#define FOD_STATUS_ON 1
-#define FOD_STATUS_OFF 0
+#define UDFPS_STATUS_PATH "/sys/class/touch/tp_dev/fod_status"
+#define UDFPS_STATUS_ON 1
+#define UDFPS_STATUS_OFF 0
 
 template <typename T>
 static void set(const std::string& path, const T& value) {
@@ -92,13 +92,15 @@ class LaurelSproutUdfpsHander : public UdfpsHandler {
                 bool fodUi = readBool(fodUiFd);
 
                 mDevice->extCmd(mDevice, COMMAND_NIT, fodUi ? PARAM_NIT_FOD : PARAM_NIT_NONE);
-                set(FOD_STATUS_PATH, FOD_STATUS_ON);
+                if (!fodUi) {
+                    set(UDFPS_STATUS_PATH, UDFPS_STATUS_OFF);
+                }
             }
         }).detach();
     }
 
     void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
-        // nothing
+        set(UDFPS_STATUS_PATH, UDFPS_STATUS_ON);
     }
 
     void onFingerUp() {
@@ -108,19 +110,18 @@ class LaurelSproutUdfpsHander : public UdfpsHandler {
     void onAcquired(int32_t result, int32_t vendorCode) {
         LOG(INFO) << __func__ << " result: " << result << " vendorCode: " << vendorCode;
         if (result == FINGERPRINT_ACQUIRED_GOOD) {
-            setFingerDown(false);
-            setFodStatus(FOD_STATUS_OFF);
+            set(UDFPS_STATUS_PATH, UDFPS_STATUS_OFF);
         } else if (vendorCode == 21 || vendorCode == 23) {
             /*
              * vendorCode = 21 waiting for fingerprint authentication
              * vendorCode = 23 waiting for fingerprint enroll
              */
-            setFodStatus(FOD_STATUS_ON);
+            set(UDFPS_STATUS_PATH, UDFPS_STATUS_ON);
         }
     }
 
     void cancel() {
-        // nothing
+        set(UDFPS_STATUS_PATH, UDFPS_STATUS_OFF);
     }
   private:
     fingerprint_device_t *mDevice;
