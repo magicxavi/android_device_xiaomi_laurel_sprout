@@ -164,6 +164,12 @@ vendor.gralloc.enable_fb_ubwc=1
 ro.sf.force_light_brightness=1
 ro.surface_flinger.enable_frame_rate_override=false
 
+# Fingerprint
+persist.vendor.fingerprint.type=udfps_optical
+persist.vendor.fingerprint.sensor_location=360|1420|70
+persist.vendor.fingerprint.sensor_modules=goodix_fod
+persist.vendor.fingerprint.udfps.control_illumination=true
+
 # HWUI properties 
 ro.hwui.texture_cache_size=72 
 ro.hwui.layer_cache_size=48 

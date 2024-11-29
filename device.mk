@@ -284,7 +284,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint feature
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.laurel_sprout \
+    android.hardware.biometrics.fingerprint-service.xiaomi \
     vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor \
     libudfpshandler
 
