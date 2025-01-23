@@ -2647,26 +2647,7 @@ system/lib/android.hardware.camera.device@3.6.so
 system/lib/android.hardware.camera.provider@2.4.so
 system/lib/android.hardware.camera.provider@2.5.so
 system/lib/android.hardware.camera.provider@2.6.so
-system/lib64/libcamera_client.so
-system/lib64/libcamera_metadata.so
-system/lib/libcamera_client.so
-system/lib/libcamera_metadata.so
 system/lib/libcameraservice.so
-system/lib/libcom.xiaomi.camera.requestutil.so
-system_ext/lib64/libqvrcamera_client.qti.so
-system_ext/lib64/libqvrservice_client.qti.so
-system_ext/lib64/libqvrservice_ov7251_hvx_tuning.so
-system_ext/lib64/libqvrservice_ov9282_hvx_tuning.so
-system_ext/lib64/libqvrservice_v4l_ov7251_hvx_tuning.so
-system_ext/lib/libqvr_cam_cdsp_driver_stub.so
-system_ext/lib/libqvrcamera_client.qti.so
-system_ext/lib/libqvr_cdsp_driver_stub.so
-system_ext/lib/libqvr_eyetracking_plugin.so
-system_ext/lib/libqvrservice_client.qti.so
-system_ext/lib/libqvrservice_ov7251_hvx_tuning.so
-system_ext/lib/libqvrservice_ov9282_hvx_tuning.so
-system_ext/lib/libqvrservice.so
-system_ext/lib/libqvrservice_v4l_ov7251_hvx_tuning.so
 
 # Camera sensors
 vendor/lib/libmmcamera_laurus_gc2375_qtech.so
