@@ -44,8 +44,6 @@ public class DozeSettingsFragment extends PreferenceFragment
         implements OnPreferenceChangeListener, OnCheckedChangeListener {
     private MainSwitchPreference mSwitchBar;
 
-    private SwitchPreferenceCompat mAlwaysOnDisplayPreference;
-    private ListPreference mDozeBrightnessPreference;
     private SwitchPreferenceCompat mWakeOnGesturePreference;
     private SwitchPreferenceCompat mPickUpPreference;
     private SwitchPreferenceCompat mPocketPreference;
@@ -67,16 +65,6 @@ public class DozeSettingsFragment extends PreferenceFragment
         mSwitchBar = (MainSwitchPreference) findPreference(DozeUtils.DOZE_ENABLE);
         mSwitchBar.addOnSwitchChangeListener(this);
         mSwitchBar.setChecked(dozeEnabled);
-
-        mAlwaysOnDisplayPreference = (SwitchPreferenceCompat) findPreference(DozeUtils.ALWAYS_ON_DISPLAY);
-        mAlwaysOnDisplayPreference.setEnabled(dozeEnabled);
-        mAlwaysOnDisplayPreference.setChecked(DozeUtils.isAlwaysOnEnabled(getActivity()));
-        mAlwaysOnDisplayPreference.setOnPreferenceChangeListener(this);
-
-        mDozeBrightnessPreference = (ListPreference) findPreference(DozeUtils.DOZE_BRIGHTNESS_KEY);
-        mDozeBrightnessPreference.setEnabled(
-                dozeEnabled && DozeUtils.isAlwaysOnEnabled(getActivity()));
-        mDozeBrightnessPreference.setOnPreferenceChangeListener(this);
 
         PreferenceCategory gesturesCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(
@@ -104,46 +92,10 @@ public class DozeSettingsFragment extends PreferenceFragment
         if (!DozeUtils.getProxCheckBeforePulse(getActivity())) {
             getPreferenceScreen().removePreference(proximitySensorCategory);
         }
-
-        // Hide AOD and doze brightness if not supported and set all its dependents otherwise
-        if (!DozeUtils.alwaysOnDisplayAvailable(getActivity())) {
-            getPreferenceScreen().removePreference(mAlwaysOnDisplayPreference);
-            getPreferenceScreen().removePreference(mDozeBrightnessPreference);
-        } else {
-            if (!FileUtils.isFileWritable(DozeUtils.DOZE_MODE_PATH)) {
-                getPreferenceScreen().removePreference(mDozeBrightnessPreference);
-            } else {
-                DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
-            }
-            gesturesCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
-            pickupSensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
-            proximitySensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
-        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (DozeUtils.ALWAYS_ON_DISPLAY.equals(preference.getKey())) {
-            DozeUtils.enableAlwaysOn(getActivity(), (Boolean) newValue);
-            if (!(Boolean) newValue) {
-                mDozeBrightnessPreference.setValue(DozeUtils.DOZE_BRIGHTNESS_LBM);
-                DozeUtils.setDozeMode(DozeUtils.DOZE_BRIGHTNESS_LBM);
-            } else {
-                mPickUpPreference.setChecked(false);
-                mPocketPreference.setChecked(false);
-            }
-            mDozeBrightnessPreference.setEnabled((Boolean) newValue);
-        } else if (DozeUtils.DOZE_BRIGHTNESS_KEY.equals(preference.getKey())) {
-            if (!DozeUtils.DOZE_BRIGHTNESS_AUTO.equals((String) newValue)) {
-                DozeUtils.setDozeMode((String) newValue);
-            }
-        }
-
-        mHandler.post(() -> {
-            DozeUtils.checkDozeService(getActivity());
-            DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
-        });
-
         return true;
     }
 
@@ -155,16 +107,9 @@ public class DozeSettingsFragment extends PreferenceFragment
         mSwitchBar.setChecked(isChecked);
 
         if (!isChecked) {
-            DozeUtils.enableAlwaysOn(getActivity(), false);
-            mAlwaysOnDisplayPreference.setChecked(false);
-            mDozeBrightnessPreference.setValue(DozeUtils.DOZE_BRIGHTNESS_LBM);
-            DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
             mPickUpPreference.setChecked(false);
             mPocketPreference.setChecked(false);
         }
-        mAlwaysOnDisplayPreference.setEnabled(isChecked);
-        mDozeBrightnessPreference.setEnabled(
-                isChecked && DozeUtils.isAlwaysOnEnabled(getActivity()));
         mWakeOnGesturePreference.setEnabled(isChecked);
         mPickUpPreference.setEnabled(isChecked);
         mPocketPreference.setEnabled(isChecked);

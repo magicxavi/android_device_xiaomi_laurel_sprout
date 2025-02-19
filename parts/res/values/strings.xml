@@ -25,6 +25,7 @@
     <string name="doze_brightness_summary">%s mode is enabled</string>
     
     <!--Display settings fragment -->
-    <string name="display_settings_summary">Ambient display gestures</string>
+    <string name="ambient_display_settings">Ambient display gestures</string>
+    <string name="ambient_display_settings_summary">Additional gestures for ambient display</string>
 
 </resources>

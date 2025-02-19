@@ -44,8 +44,6 @@ public final class DozeUtils {
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
 
     protected static final String DOZE_ENABLE = "doze_enable";
-    protected static final String ALWAYS_ON_DISPLAY = "always_on_display";
-    protected static final String DOZE_BRIGHTNESS_KEY = "doze_brightness";
     protected static final String WAKE_ON_GESTURE_KEY = "wake_on_gesture";
     protected static final String CATEG_GESTURES = "gestures";
     protected static final String CATEG_PICKUP_SENSOR = "pickup_sensor";
@@ -54,18 +52,8 @@ public final class DozeUtils {
     protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
 
-    protected static final String DOZE_MODE_PATH =
-            "/sys/devices/platform/soc/soc:qcom,dsi-display/doze_mode";
-    protected static final String DOZE_MODE_HBM = "1";
-    protected static final String DOZE_MODE_LBM = "0";
-
-    protected static final String DOZE_BRIGHTNESS_LBM = "0";
-    protected static final String DOZE_BRIGHTNESS_HBM = "1";
-    protected static final String DOZE_BRIGHTNESS_AUTO = "2";
-
     public static void onBootCompleted(Context context) {
         checkDozeService(context);
-        restoreDozeModes(context);
     }
     public static void startService(Context context) {
         if (DEBUG)
@@ -80,17 +68,10 @@ public final class DozeUtils {
     }
 
     public static void checkDozeService(Context context) {
-        if (isDozeEnabled(context) && (isAlwaysOnEnabled(context) || sensorsEnabled(context))) {
+        if (isDozeEnabled(context) && sensorsEnabled(context)) {
             startService(context);
         } else {
             stopService(context);
-        }
-    }
-
-    private static void restoreDozeModes(Context context) {
-        if (isAlwaysOnEnabled(context) && !isDozeAutoBrightnessEnabled(context)) {
-            setDozeMode(PreferenceManager.getDefaultSharedPreferences(context).getString(
-                    DOZE_BRIGHTNESS_KEY, String.valueOf(DOZE_BRIGHTNESS_LBM)));
         }
     }
     protected static boolean getProxCheckBeforePulse(Context context) {
@@ -128,35 +109,6 @@ public final class DozeUtils {
         }
     }
 
-    protected static boolean enableAlwaysOn(Context context, boolean enable) {
-        return Settings.Secure.putIntForUser(context.getContentResolver(), DOZE_ALWAYS_ON,
-                enable ? 1 : 0, UserHandle.USER_CURRENT);
-    }
-
-    protected static boolean isAlwaysOnEnabled(Context context) {
-        final boolean enabledByDefault = context.getResources().getBoolean(
-                com.android.internal.R.bool.config_dozeAlwaysOnEnabled);
-
-        return Settings.Secure.getIntForUser(context.getContentResolver(), DOZE_ALWAYS_ON,
-                       alwaysOnDisplayAvailable(context) && enabledByDefault ? 1 : 0,
-                       UserHandle.USER_CURRENT)
-                != 0;
-    }
-
-    protected static boolean alwaysOnDisplayAvailable(Context context) {
-        return new AmbientDisplayConfiguration(context).alwaysOnAvailable();
-    }
-
-    protected static boolean setDozeMode(String value) {
-        return FileUtils.writeLine(DOZE_MODE_PATH, value);
-    }
-
-    protected static boolean isDozeAutoBrightnessEnabled(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context)
-                .getString(DOZE_BRIGHTNESS_KEY, DOZE_BRIGHTNESS_LBM)
-                .equals(DOZE_BRIGHTNESS_AUTO);
-    }
-
     protected static boolean isGestureEnabled(Context context, String gesture) {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(gesture, false);
     }
@@ -174,7 +126,7 @@ public final class DozeUtils {
     }
 
     public static boolean sensorsEnabled(Context context) {
-        return isDozeAutoBrightnessEnabled(context) || isPickUpEnabled(context) || isPocketGestureEnabled(context);
+        return isPickUpEnabled(context) || isPocketGestureEnabled(context);
     }
 
     protected static Sensor getSensor(SensorManager sm, String type) {
@@ -184,20 +136,5 @@ public final class DozeUtils {
             }
         }
         return null;
-    }
-
-    protected static void updateDozeBrightnessIcon(Context context, ListPreference preference) {
-        switch (PreferenceManager.getDefaultSharedPreferences(context).getString(
-                DOZE_BRIGHTNESS_KEY, DOZE_BRIGHTNESS_LBM)) {
-            case DozeUtils.DOZE_BRIGHTNESS_LBM:
-                preference.setIcon(R.drawable.ic_doze_brightness_low);
-                break;
-            case DozeUtils.DOZE_BRIGHTNESS_HBM:
-                preference.setIcon(R.drawable.ic_doze_brightness_high);
-                break;
-            case DozeUtils.DOZE_BRIGHTNESS_AUTO:
-                preference.setIcon(R.drawable.ic_doze_brightness_auto);
-                break;
-        }
     }
 }
