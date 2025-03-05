@@ -33,7 +33,6 @@ PRODUCT_DEVICE := laurel_sprout
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_NAME := aosp_laurel_sprout
 PRODUCT_MODEL := Mi A3
-TARGET_DEVICE_NAME := MI_A3
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 

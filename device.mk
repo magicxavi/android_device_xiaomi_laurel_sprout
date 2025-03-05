@@ -267,9 +267,6 @@ PRODUCT_PACKAGES += \
 # Dolby
 $(call inherit-product, vendor/dolby/dolby-product.mk)
 
-# Dolby
-$(call inherit-product, vendor/dolby/dolby-product.mk)
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
