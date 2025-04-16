@@ -46,6 +46,10 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             echo 'gettid: 1' >> ${2}
             ;; 
+        vendor/lib64/hw/android.hardware.health@2.0-impl-2.1-qti.so)
+             [ "$2" = "" ] && return 0
+             grep -q "libbase_shim.so" "${2}" || "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
+             ;;
     esac
 }
 

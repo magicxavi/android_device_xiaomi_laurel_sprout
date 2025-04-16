@@ -516,6 +516,10 @@ PRODUCT_PACKAGES += \
     libjpeg \
     libexif
 
+# Libui shim
+PRODUCT_PACKAGES += \
+    libbase_shim
+
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
